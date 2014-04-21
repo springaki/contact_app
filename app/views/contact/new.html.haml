@@ -1,0 +1,20 @@
+%h2
+  お問い合わせフォーム
+= simple_form_for @message, :url => contact_path do |f|
+  %div#basic-form-wide
+    %fieldset.fields
+      %dl
+        %dt= f.label :name
+        %dd= f.text_field :name
+      %dl
+        %dt= f.label :email
+        %dd= f.text_field :email
+      %dl
+        %dt= f.label :subject
+        %dd= f.text_field :subject
+      %dl
+        %dt= f.label :body
+        %dd= f.text_field :body
+    %div#form-action
+      %div.submit
+        = f.submit :name => :send
